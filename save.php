@@ -7,9 +7,8 @@ $options = array(
 ); 
 
 $dbh = new PDO($dsn, $username, $password, $options);
-$stmt=$dbh->prepare("insert into test (nev) values (:nev)");
+$stmt=$dbh->prepare("insert into user (name) values (:nev)");
 $stmt->execute($_POST);
 if($result===false){
-    var_dump(mysql_error($connect));
+    var_dump(mysql_error($result));
 }
-header("Location: http://localhost/szargep");

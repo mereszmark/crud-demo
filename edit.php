@@ -1,8 +1,11 @@
 <?php
 $connect= mysql_connect("localhost", "root", "");
 mysql_select_db("test", $connect);
-$result=mysql_query("select test.id , test.nev , phones.tel from test left join phones on test.id=phones.user_id where test.id= ". $_GET["id"], $connect);
+$result=mysql_query("select user.id , user.name , phone.phone_num from user left join phone on user.id=phone.user_id where user.id= ". $_GET["id"], $connect);
 $row= mysql_fetch_assoc($result);
+if($result===false){
+    var_dump(mysql_error($result));
+}
 ?>
 <!DOCTYPE html>
 
@@ -15,9 +18,9 @@ $row= mysql_fetch_assoc($result);
     </head>
     <body>
         <form action="update.php" method="POST">
-            <input type="text" name="nev" value="<?php echo $row["nev"]?>">
+            <input type="text" name="nev" value="<?php echo $row["name"]?>">
             <input type="hidden" name="id" value="<?php echo $row["id"]?>">
-            <input type="text" name="tel" value="<?php echo $row["tel"]?>">
+            <input type="text" name="tel" value="<?php echo $row["phone_num"]?>">
             <input type="submit">
             
         </form>

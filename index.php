@@ -31,10 +31,10 @@ and open the template in the editor.
                <?php foreach($data as $row ):  ?>
                 <tr>
                     <td>
-                        <?php echo $row["nev"] ?>   
+                        <?php echo $row["name"] ?>   
                     </td>
                     <td>
-                        <?php echo $row["tel"] ?>
+                        <?php echo $row["phone_num"] ?>
                     </td>
                     <td>
                         <a class="btn btn-success"  href="edit.php?id=<?php echo $row["id"] ?>"><span class="glyphicon glyphicon-scissors"></span> Szerkesztés</a> 
