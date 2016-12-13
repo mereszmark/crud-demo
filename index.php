@@ -41,10 +41,10 @@ and open the template in the editor.
                             <?php echo $row["phone_num"] ?>
                         </td>
                         <td>
-                            <a class="btn btn-success" href="edit.php?id=<?php echo $row[" id "] ?>"><span class="glyphicon glyphicon-scissors"></span> Szerkesztés</a>
+                            <a class="btn btn-success" href="edit.php?id=<?php echo $row["id"] ?>"><span class="glyphicon glyphicon-scissors"></span> Szerkesztés</a>
                         </td>
                         <td>
-                            <a class="btn btn-danger" href="delete.php?id=<?php echo $row[" id "] ?>"><span class="glyphicon glyphicon-trash"></span> Törlés</a>
+                            <a class="btn btn-danger" href="delete.php?id=<?php echo $row["id"] ?>"><span class="glyphicon glyphicon-trash"></span> Törlés</a>
                         </td>
                     </tr>
                     <?php endforeach;?>
@@ -60,24 +60,5 @@ and open the template in the editor.
 
         ?>
 </body>
-<script>
-    $('#myTabs a').click(function (e) {
-	e.preventDefault();
-  
-	var url = $(this).attr("data-url");
-  	var href = this.hash;
-  	var pane = $(this);
-	
-	// ajax load from data-url
-	$(href).load(url,function(result){      
-	    pane.tab('show');
-	});
-});
-
-// load first tab content
-$('#home').load($('.active a').attr("data-url"),function(result){
-  $('.active a').tab('show');
-});
-    </script>
 
 </html>

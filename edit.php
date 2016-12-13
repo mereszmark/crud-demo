@@ -2,8 +2,10 @@
 $connect= mysql_connect("localhost", "root", "");
 mysql_select_db("test", $connect);
 $result=mysql_query("select user.id , user.name , phone.phone_num from user left join phone on user.id=phone.user_id where user.id= ". $_GET["id"], $connect);
+var_dump($result);
+
 $row= mysql_fetch_assoc($result);
-if($result===false){
+if($result==false){
     var_dump(mysql_error($result));
 }
 ?>

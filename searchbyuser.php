@@ -57,6 +57,12 @@ if($result===false){
                     <td>
                        ". $row['phone_num']."
                     </td>
+                     <td>
+                            <a class='btn btn-success' href='edit.php?id=".$row['id']."'><span class='glyphicon glyphicon-scissors'></span> Szerkesztés</a>
+                        </td>
+                        <td>
+                            <a class='btn btn-danger' href='delete.php?id=".$row["id"]."'><span class='glyphicon glyphicon-trash'></span> Törlés</a>
+                        </td>
                 </tr>              
             </tbody>
         </table>";}  
